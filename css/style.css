@@ -1,7 +1,11 @@
 div {
-  border: 1px dotted grey;
+  /*border: 1px dotted grey;*/
 }
 
 img {
   width: 100%;
+}
+
+.btn-newbookSave  {
+  margin-top: 20px;
 }

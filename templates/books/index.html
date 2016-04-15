@@ -2,19 +2,48 @@
   <div class="row">
     <h2>Library Books</h2>
   </div>
+<hr />
+
+  <div class="row">
+    <fieldset>
+      <div class="form-group" ng-show="newBook">
+        <label class="col-md-4 control-label">Book Title</label>
+        <div class="col-md-4">
+          <input id="title" ng-model="booksIndexCtrl.newBook.title" type="text" class="form-control input-md" required="">
+        </div>
+        <label class="col-md-4 control-label">Author</label>
+        <div class="col-md-4">
+          <input id="author" ng-model="booksIndexCtrl.newBook.author" type="text" class="form-control input-md" required="">
+        </div>
+        <label class="col-md-4 control-label">Release Date</label>
+        <div class="col-md-4">
+          <input id="releaseDate" ng-model="booksIndexCtrl.newBook.releaseDate" type="text" class="form-control input-md" required="">
+        </div>
+        <label class="col-md-4 control-label">Image Url</label>
+        <div class="col-md-4">
+          <input id="image" ng-model="booksIndexCtrl.newBook.image" type="text" class="form-control input-md" required="">
+        </div>
+        <button class="btn btn-success btn-block btn-newbookSave" ng-click="booksIndexCtrl.createBook(book); newBook = false">SAVE IT!</button>
+      </div>
+    </fieldset>
+    <button class="btn btn-primary btn-block" ng-hide="newBook" ng-click="newBook = true">Add a New Book</button>
+  </div>
+
+<hr />
 
   <div ng-repeat="book in booksIndexCtrl.books | orderBy:'title'">
     <div class="row">
-      <img ng-src="{{book.image}}">
+      <a ng-href={{book._id}}><img ng-src="{{book.image}}"></a>
     </div>
     <div class="row">
       <h4><a ng-href={{book._id}}>{{book.title}}</a></h4>
     </div>
     <div class="row">
-      <h4>by {{book.author}}</h4>
+      <h4><a ng-href="http://www.wikipedia.org/wiki/{{book.author}}" target="_blank">by {{book.author}}</a></h4>
     </div>
     <div class="row">
       <hr />
     </div>
   </div>
+
 </div>

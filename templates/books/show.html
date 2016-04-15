@@ -5,13 +5,26 @@
 
 <div class="row">
   <img ng-src="{{booksShowCtrl.book.image}}">
+	<input ng-show="editing" id="image" ng-model="booksShowCtrl.book.image" type="text" class="form-control input-md">
 </div>
 <div class="row">
-  <h4>{{booksShowCtrl.book.title}}</h4>
+  <h4 ng-hide="editing">{{booksShowCtrl.book.title}}</h4>
+	<input ng-show="editing" id="title" ng-model="booksShowCtrl.book.title" type="text" class="form-control input-md">
 </div>
 <div class="row">
-  <h4>by {{booksShowCtrl.book.author}}</h4>
+  <h4 ng-hide="editing">by {{booksShowCtrl.book.author}}</h4>
+	<input ng-show="editing" id="author" ng-model="booksShowCtrl.book.author" type="text" class="form-control input-md">
 </div>
 <div class="row">
-  <hr />
+	<h5 ng-hide="editing" class="release-date">First Published {{booksShowCtrl.book.releaseDate}}</h5>
+	<input ng-show="editing" id="releaseDate" ng-model="booksShowCtrl.book.releaseDate" type="text" class="form-control input-md">
+</div>
+<div class="row">
+	<div class="col-xs-3 col-xs-offset-6">
+		<button class="btn btn-warning pull-right" ng-hide="editing" ng-click="editing = true">Edit</button>
+		<button class="btn btn-success pull-right" ng-show="editing" ng-click="booksShowCtrl.editBook(book); editing = false">Save</button>
+	</div>
+	<div class="col-xs-3">
+		<button class="btn btn-danger pull-right" ng-click="booksShowCtrl.deleteBook(book)">Delete</button>
+	</div>
 </div>
