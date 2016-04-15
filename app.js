@@ -1,6 +1,5 @@
 angular.module('libraryApp', ['ngRoute'])
-       .config(config)
-       .controller('BooksShowController', BooksShowController);
+       .config(config);
 
 ////////////
 // ROUTES //
@@ -10,9 +9,9 @@ config.$inject = ['$routeProvider', '$locationProvider'];
 function config (  $routeProvider,   $locationProvider  )  {
   $routeProvider
     .when('/', {
-      templateUrl: /* Include the path to the index template */,
-      controller:  /* Which controller do you want the main page to use */,
-      controllerAs:/* What will you call the controller in the html? */
+      templateUrl: '/templates/books/index.html',
+      controller:  'BooksIndexController',
+      controllerAs: 'booksIndexCtrl'
     })
     /* Include the additional route here! */
     .otherwise({
@@ -25,4 +24,4 @@ function config (  $routeProvider,   $locationProvider  )  {
       enabled: true,
       requireBase: false
     });
-};
+}
