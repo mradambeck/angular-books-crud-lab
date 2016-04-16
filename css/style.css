@@ -1,11 +1,48 @@
+/*
+COLORS: #1a0f0a #133b51 #c3d9ca #a5c07d #f0f0f0
+*/
+
+body {
+  background-color: #f0f0f0;
+}
+
+a {
+  color: #133b51;
+}
 div {
   /*border: 1px dotted grey;*/
 }
 
+hr {
+  border-top: 1px solid #c3d9ca;
+}
+
 img {
-  width: 100%;
+  /*width: 100%;*/
+}
+
+.book-list img {
+  /*max-height: 450px;
+  max-width: 300px;*/
+  width: 290px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .btn-newbookSave  {
   margin-top: 20px;
+}
+
+.show-page img {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.show-page .btn {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.pad-left {
+  padding-left: 30px;
 }

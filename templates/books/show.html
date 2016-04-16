@@ -1,30 +1,33 @@
-<div class="row">
-	<h2>{{booksShowCtrl.book.title}}</h2>
-	<hr>
-</div>
-
-<div class="row">
-  <img ng-src="{{booksShowCtrl.book.image}}">
-	<input ng-show="editing" id="image" ng-model="booksShowCtrl.book.image" type="text" class="form-control input-md">
-</div>
-<div class="row">
-  <h4 ng-hide="editing">{{booksShowCtrl.book.title}}</h4>
-	<input ng-show="editing" id="title" ng-model="booksShowCtrl.book.title" type="text" class="form-control input-md">
-</div>
-<div class="row">
-  <h4 ng-hide="editing">by {{booksShowCtrl.book.author}}</h4>
-	<input ng-show="editing" id="author" ng-model="booksShowCtrl.book.author" type="text" class="form-control input-md">
-</div>
-<div class="row">
-	<h5 ng-hide="editing" class="release-date">First Published {{booksShowCtrl.book.releaseDate}}</h5>
-	<input ng-show="editing" id="releaseDate" ng-model="booksShowCtrl.book.releaseDate" type="text" class="form-control input-md">
-</div>
-<div class="row">
-	<div class="col-xs-3 col-xs-offset-6">
-		<button class="btn btn-warning pull-right" ng-hide="editing" ng-click="editing = true">Edit</button>
-		<button class="btn btn-success pull-right" ng-show="editing" ng-click="booksShowCtrl.editBook(book); editing = false">Save</button>
+<div class="show-page">
+	<div class="row">
+		<h1>{{booksShowCtrl.book.title}}</h1>
+		<hr>
 	</div>
-	<div class="col-xs-3">
-		<button class="btn btn-danger pull-right" ng-click="booksShowCtrl.deleteBook(book)">Delete</button>
+
+	<div class="row">
+	  <img ng-src="{{booksShowCtrl.book.image}}">
+		<input ng-show="editing" ng-model="booksShowCtrl.book.image" type="text" class="form-control input-md">
+	</div>
+	<div class="row">
+	  <h2 class="pad-left" ng-hide="editing">{{booksShowCtrl.book.title}}</h2>
+		<input ng-show="editing" ng-model="booksShowCtrl.book.title" type="text" class="form-control input-md">
+	</div>
+	<div class="row">
+	  <h4 class="pad-left" ng-hide="editing">by {{booksShowCtrl.book.author}}</h4>
+		<input ng-show="editing" ng-model="booksShowCtrl.book.author" type="text" class="form-control input-md">
+	</div>
+	<div class="row">
+		<h5 class="pad-left" ng-hide="editing" class="release-date">First Published {{booksShowCtrl.book.releaseDate}}</h5>
+		<input ng-show="editing" ng-model="booksShowCtrl.book.releaseDate" type="text" class="form-control input-md">
+	</div>
+	<div class="row">
+		<div class="col-xs-3 col-xs-offset-6">
+			<button class="btn btn-warning pull-right" ng-hide="editing" ng-click="editing = true">Edit</button>
+			<button class="btn btn-success pull-right" ng-show="editing" ng-click="booksShowCtrl.editBook(book); editing = false">Save</button>
+		</div>
+		<div class="col-xs-3">
+			<button class="btn btn-danger pull-right" ng-hide="editing" ng-click="booksShowCtrl.deleteBook(book)">Delete</button>
+			<button class="btn btn-default pull-right" ng-show="editing" ng-click="editing = false">Cancel</button>
+		</div>
 	</div>
 </div>
